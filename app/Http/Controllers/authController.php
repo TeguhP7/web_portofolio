@@ -10,10 +10,23 @@ use Laravel\Socialite\Facades\Socialite;
 
 class authController extends Controller
 {
+
+    // protected $model;
+
+
+
+    // public function __construct()
+    // {
+    //     $this->model = "Aku";
+    // }
+
     function index()
     {
-        // return view('auth.index');
-        return view('auth.login');
+        // $data = $this->model . 'Ganteng';
+        // return view('auth.index', ['data' => $data]);
+        return view('auth.index');
+
+        // return view('auth.login');
 
     }
 
