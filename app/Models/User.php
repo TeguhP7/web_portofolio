@@ -13,13 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     // protected $table = 'users'; 
-    /* karena nama tabel di database users (bentuk plural), jadi nama kelas user (mewakili koneksi ke database)
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     * 
-     */
+    // // karena nama tabel di database users (bentuk plural), jadi nama kelas user (mewakili koneksi ke database)
 
     protected $fillable = [
         'name',
@@ -30,11 +24,6 @@ class User extends Authenticatable
 
     public $timestamps = true;
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     // protected $hidden = [
     //     'password',
     //     'remember_token',
@@ -48,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getData($id = null)
+    {
+        if ($id == null) {
+            return $this->all();
+        } else {
+            return $this->all()->find($id);
+        }
+    }
+
 }

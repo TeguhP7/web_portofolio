@@ -22,11 +22,10 @@ class authController extends Controller
 
     function index()
     {
-        // $data = $this->model . 'Ganteng';
-        // return view('auth.index', ['data' => $data]);
-        return view('auth.index');
-
+        // $data['data'] = $this->model . 'Ganteng';
+        // return view('auth.index', ['data'=>$data]);
         // return view('auth.login');
+        return view('auth.index');
 
     }
 
